@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>BTL Odoo Order Display</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="/static/css/main.css" type="text/css" media="screen" charset="utf-8">
+		<script
+		  src="https://code.jquery.com/jquery-3.6.0.min.js"
+		  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+		  crossorigin="anonymous"></script>
+		{% csrf_token %}
+	</head>
+	
+	<body onload="timeText()">
+		<div class="container">
+			<div id="header">
+				<table>
+					<tr>
+						<td><h1>To Pick</h1></td>
+						<td><h1>Packed</h1></td>
+						<td><h1>Returns</h1></td>
+						<td><h1>Runs</h1></td>
+					</tr>
+				</table>
+			</div>
+			<div id="to_pick" class="column"></div>
+			<div id="packed" class="column"></div>
+			<div id="returns" class="column"></div>
+			<div id="runs" class="column"></div>
+			<div id="time_div">
+				<h1 id="time_text"></h1>
+			</div>
+		</div>
+		
+		<script src="/static/js/main.js"></script>
+		<script type="text/javascript">
+			function timeText() {
+				
+				var now = new Date();
+				let month = now.getMonth();
+				
+				let day_number = now.getDay();
+				let date = now.getDate();
+				let hour = now.getHours();
+				let minute = now.getMinutes();
+				let seconds = now.getSeconds();
+				let xm = 'AM';
+				minute = checkTime(minute);
+				seconds = checkTime(seconds);
+				
+				if (hour > 12) {
+					hour = hour - 12;
+					xm = 'PM'
+				}
+				
+				function checkTime (x) {
+					if (x < 10) {
+						x = '0' + x
+					};
+					return x;
+				}
+				
+				switch (month) {
+					case 0: month = 'January'; break;
+					case 1: month = 'February'; break;
+					case 2: month = 'March'; break;
+					case 3: month = 'April'; break;
+					case 4: month = 'May'; break;
+					case 5: month = 'June'; break;
+					case 6: month = 'July'; break;
+					case 7: month = 'August'; break;
+					case 8: month = 'September'; break;
+					case 9: month = 'October'; break;
+					case 10: month = 'November'; break;
+					case 11: month = 'December'; break;
+				}
+				
+				switch (day_number) {
+					case 0: day_number = 'Sunday'; break;
+					case 1: day_number = 'Monday'; break;
+					case 2: day_number = 'Tuesday'; break;
+					case 3: day_number = 'Wednesday'; break;
+					case 4: day_number = 'Thursday'; break;
+					case 5: day_number = 'Friday'; break;
+					case 6: day_number = 'Saturday'; break;
+					default: day_number = 'Day'; break;
+				}
+				
+				$('#time_text').html(day_number + " " + month + " " + date + " • " + hour + ":" + minute + ':' + seconds + ' ' + xm)
+				setTimeout(timeText, 1000)
+			}
+		</script>
+	</body>
+</html>

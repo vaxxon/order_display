@@ -1,0 +1,155 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+}
+
+@font-face {
+	font-family: 'Conv_ITCFranklinGothicStd-Book';
+	src: url('../fonts/ITCFranklinGothicStd-Book.eot');
+	src: local('☺'), url('../fonts/ITCFranklinGothicStd-Book.woff') format('woff'), url('../fonts/ITCFranklinGothicStd-Book.ttf') format('truetype'), url('../fonts/ITCFranklinGothicStd-Book.svg') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Conv_ITCFranklinGothicStd-Med';
+	src: url('../fonts/ITCFranklinGothicStd-Med.eot');
+	src: local('☺'), url('../fonts/ITCFranklinGothicStd-Med.woff') format('woff'), url('../fonts/ITCFranklinGothicStd-Med.ttf') format('truetype'), url('../fonts/ITCFranklinGothicStd-Med.svg') format('svg');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Conv_ITCFranklinGothicStd-Demi';
+	src: url('../fonts/ITCFranklinGothicStd-Demi.eot');
+	src: local('☺'), url('../fonts/ITCFranklinGothicStd-Demi.woff') format('woff'), url('../fonts/ITCFranklinGothicStd-Demi.ttf') format('truetype'), url('../fonts/ITCFranklinGothicStd-Demi.svg') format('svg');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Conv_ITCFranklinGothicStd-Hvy';
+	src: url('../fonts/ITCFranklinGothicStd-Hvy.eot');
+	src: local('☺'), url('../fonts/ITCFranklinGothicStd-Hvy.woff') format('woff'), url('../fonts/ITCFranklinGothicStd-Hvy.ttf') format('truetype'), url('../fonts/ITCFranklinGothicStd-Hvy.svg') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
+
+body {
+	background-color: black;
+	height: 100%;
+	overflow: hidden;
+}
+
+div.container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+div.column {
+	width: 24.5%;
+	padding: 0 0.5% 3em;
+	margin-top: 3.2em;
+	display: block;
+	float: left;
+	height: 100%;
+	overflow-y: scroll;
+	z-index: 0;
+}
+
+div#header {
+	position: fixed;
+	width: 100%;
+	height: 3em;
+	padding-top: 10px;
+	background: black;
+	z-index: 8;
+	display: flex;
+	justify-content: center;
+}
+
+div#header table {
+	width: 100%;
+}
+
+div#header table tr td {
+	width: 24.5%;
+	padding: 0 .5%;
+}
+
+div.card {
+	width: 98%;
+	margin: 2px 0;
+	display: block;
+	background: #64af6b;
+	padding: 8px;
+	z-index: 1;
+}
+
+div.pr2 {
+	background: #2ab541;
+}
+
+div.pr3 {
+	background: #009315;
+}
+
+div.r {
+	background: #006837;
+}
+
+div.d {
+	background: #6d42c1;
+}
+
+div#time_div {
+	position: fixed;
+	bottom: 0;
+	padding-top: .8em;
+	height: 3em;
+	width: 100%;
+	z-index: 5;
+	background-color: black;
+	text-align: center;
+}
+
+h1 {
+	font-family: 'Conv_ITCFranklinGothicStd-Demi', Helvetica, sans-serif;
+	font-weight: 600;
+	font-size: 2.5em;
+	color: rgb(230, 230, 230);
+}
+
+h1#time_text {
+	margin: auto;
+}
+
+p {
+	font-family: 'Conv_ITCFranklinGothicStd-Book', Helvetica, sans-serif;
+	font-weight: 400;
+	font-size: 1.25em;
+	line-height: 1.4em;
+	color: rgb(230, 230, 230);
+	max-width: 75%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+p.right {
+	display: inline;
+	float: right;
+	text-align: right;
+	max-width: 24%;
+}
+
+p span.title {
+	font-family: 'Conv_ITCFranklinGothicStd-Med', Helvetica, sans-serif;
+	font-weight: 500;
+}
