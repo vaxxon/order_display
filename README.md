@@ -22,4 +22,5 @@ The application reloads every 30 seconds.
 
 ## Future development
 
-- Add a new order indicator and sound for five minutes after an order is confirmed and added.
+- Add a new order sound.
+- Flag new orders for five minutes after it is confirmed and added.
